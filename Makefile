@@ -1,7 +1,14 @@
-.phony: help
+.PHONY: help
 
 help:
 	@echo "I am here"
+
+
+commit:
+	git commit -am"${MESSAGE}"
+
+push:
+	git push origin main
 
 
 bootstrap-init:
