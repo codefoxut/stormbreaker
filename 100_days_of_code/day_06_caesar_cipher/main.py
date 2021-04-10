@@ -3,7 +3,8 @@ from alphabets import alphabet
 
 
 class CaesarCipher:
-    def caesar(self, start_text, shift_amount, cipher_direction):
+    @staticmethod
+    def caesar(start_text, shift_amount, cipher_direction):
         alpha_len = len(alphabet)
         end_text = ""
         resp_type = "encoded" if cipher_direction == "encode" else "decoded"
