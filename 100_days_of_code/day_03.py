@@ -35,7 +35,7 @@ def treasure_map():
     col = int(position[0]) - 1
     row = int(position[1]) - 1
 
-    map[row][col] = 'X'
+    map[row][col] = "X"
     # Write your code above this row 👆
 
     # 🚨 Don't change the code below 👇
@@ -43,46 +43,51 @@ def treasure_map():
 
 
 def rock_paper_scissors():
-    rock = '''
+    rock = """
         _______
     ---'   ____)
           (_____)
           (_____)
           (____)
     ---.__(___)
-    '''
+    """
 
-    paper = '''
+    paper = """
         _______
     ---'   ____)____
               ______)
               _______)
              _______)
     ---.__________)
-    '''
+    """
 
-    scissors = '''
+    scissors = """
         _______
     ---'   ____)____
               ______)
            __________)
           (____)
     ---.__(___)
-    '''
+    """
     rps = [rock, paper, scissors]
-    user = input("What do you choose? Type 1 for Rock, 2 for Paper or 3 for Scissors. \t")
+    user = input(
+        "What do you choose? Type 1 for Rock, 2 for Paper or 3 for Scissors. \t"
+    )
     print("\n")
     if int(user) > 3 or int(user) < 1:
         print("You chose an invalid number, You LOSE!!")
-        return 
+        return
     print(rps[int(user) - 1])
     comp = random.randint(1, 3)
     print("Computer chose:")
     print(rps[comp - 1])
     if (
-            user == '1' and comp == 2
-            or user == '2' and comp == 3
-            or user == '3' and comp == 1
+        user == "1"
+        and comp == 2
+        or user == "2"
+        and comp == 3
+        or user == "3"
+        and comp == 1
     ):
         print("YOU LOSE!!")
     elif int(user) == comp:
@@ -91,7 +96,7 @@ def rock_paper_scissors():
         print("YOU WIN!!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # coin_toss()
     # banker_roulette()
     # treasure_map()

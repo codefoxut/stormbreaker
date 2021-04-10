@@ -1,4 +1,3 @@
-
 def band_name_generator():
     # 1. Create a greeting for your program.
     print("Welcome to Band-name-generator!!!")
@@ -39,7 +38,9 @@ def life_in_weeks():
     remaining_months = remaining_years * 12
     remaining_weeks = remaining_years * 52
     remaining_days = remaining_years * 365
-    print(f"You have {remaining_days} days, {remaining_weeks} weeks, and {remaining_months} months left.")
+    print(
+        f"You have {remaining_days} days, {remaining_weeks} weeks, and {remaining_months} months left."
+    )
 
 
 def tip_calculator():
@@ -52,12 +53,14 @@ def tip_calculator():
     tip_percent_float = float(tip_percent)
     num_of_people = int(num_of_people)
 
-    tip_amount = round(bill_amount_float * (100 + tip_percent_float) / (100 * num_of_people), 2)
+    tip_amount = round(
+        bill_amount_float * (100 + tip_percent_float) / (100 * num_of_people), 2
+    )
 
     print(f"Each person should pay: ${tip_amount}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # band_name_generator()
     # bmi_calculator()
     # life_in_weeks()

@@ -51,13 +51,65 @@ def fizz_buzz_game():
         else:
             print(i)
 
+
 class PasswordGenerator:
     # Password Generator Project
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-               'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-               'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+    letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+    ]
+    numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"]
 
     def easy_password(self):
         print("Welcome to the PyPassword Generator!")
@@ -67,7 +119,7 @@ class PasswordGenerator:
 
         # Eazy Level - Order not randomised:
         # e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-        password = ''
+        password = ""
         for _ in range(int(nr_letters)):
             password += self.letters[random.randint(0, len(self.letters) - 1)]
 
@@ -88,7 +140,7 @@ class PasswordGenerator:
         # Hard Level - Order of characters randomised:
         # e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
         choose_count = [nr_letters, nr_symbols, nr_numbers]
-        password = ''
+        password = ""
         while choose_count[0] + choose_count[1] + choose_count[2] > 0:
             ty = random.randint(0, 2)
             if choose_count[ty] > 0:
@@ -102,11 +154,31 @@ class PasswordGenerator:
 
         print(password)
 
+    def hard_password2(self):
+        print("Welcome to the PyPassword Generator!")
+        nr_letters = int(input("How many letters would you like in your password?\n"))
+        nr_symbols = int(input(f"How many symbols would you like?\n"))
+        nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-if __name__ == '__main__':
+        # Hard Level - Order of characters randomised:
+        # e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+        password_list = []
+        for _ in range(nr_letters):
+            password_list.append(random.choice(self.letters))
+        for _ in range(nr_symbols):
+            password_list.append(random.choice(self.symbols))
+        for _ in range(nr_numbers):
+            password_list.append(random.choice(self.numbers))
+
+        random.shuffle(password_list)
+        password = "".join(password_list)
+        print(f"New Password: {password}")
+
+
+if __name__ == "__main__":
     # average_height()
     # high_score()
     # add_even_numbers()
     # fizz_buzz_game()
     # PasswordGenerator().easy_password()
-    PasswordGenerator().hard_password()
+    PasswordGenerator().hard_password2()

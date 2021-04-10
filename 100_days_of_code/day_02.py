@@ -1,5 +1,3 @@
-
-
 def odd_or_even():
     # 🚨 Don't change the code below 👇
     number = int(input("Which number do you want to check? "))
@@ -70,20 +68,20 @@ def pizza_order():
     # 🚨 Don't change the code above 👆
 
     # Write your code below this line 👇
-    if size == 'S':
+    if size == "S":
         bill = 15
-    elif size == 'M':
+    elif size == "M":
         bill = 20
     else:
         bill = 25
 
-    if add_pepperoni == 'Y':
-        if size == 'S':
+    if add_pepperoni == "Y":
+        if size == "S":
             bill += 2
         else:
             bill += 3
 
-    if extra_cheese == 'Y':
+    if extra_cheese == "Y":
         bill += 1
 
     print(f"Your final bill is: ${bill}")
@@ -100,9 +98,9 @@ def love_calculator():
     names = name1.lower() + name2.lower()
 
     true_count, love_count = 0, 0
-    for i in 'true':
+    for i in "true":
         true_count += names.count(i)
-    for j in 'love':
+    for j in "love":
         love_count += names.count(j)
 
     love_score = int(str(true_count) + str(love_count))
@@ -116,7 +114,8 @@ def love_calculator():
 
 
 def treasure_island():
-    print('''
+    print(
+        '''
     *******************************************************************************
               |                   |                  |                     |
      _________|________________.=""_;=.______________|_____________________|_______
@@ -137,21 +136,28 @@ def treasure_island():
     ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
     /______/______/______/______/______/______/______/______/______/______/_____ /
     *******************************************************************************
-    ''')
+    '''
+    )
     print("Welcome to Treasure Island.")
     print("Your mission is to find the treasure.")
-    left_or_right = input("you are at the cross road. Where do you want to go? Type 'left' or 'right'\t").lower()
+    left_or_right = input(
+        "you are at the cross road. Where do you want to go? Type 'left' or 'right'\t"
+    ).lower()
     if left_or_right == "left":
-        swim_wait = input("You came to a lake. There is an island in the middle of the lake. "
-                          "Type 'wait' to wait for a boat. Type 'swim' to swim across \t").lower()
-        if swim_wait == 'wait':
-            door = input("You arrived at the island unharmed. There is a house with 3 doors. one red, one yellow "
-                         "and one blue. Which color do you choose? \t").lower()
-            if door == 'red':
+        swim_wait = input(
+            "You came to a lake. There is an island in the middle of the lake. "
+            "Type 'wait' to wait for a boat. Type 'swim' to swim across \t"
+        ).lower()
+        if swim_wait == "wait":
+            door = input(
+                "You arrived at the island unharmed. There is a house with 3 doors. one red, one yellow "
+                "and one blue. Which color do you choose? \t"
+            ).lower()
+            if door == "red":
                 print("You are burned by Fire. GAME OVER!")
-            elif door == 'blue':
+            elif door == "blue":
                 print("You are eaten by beast. GAME OVER!")
-            elif door == 'yellow':
+            elif door == "yellow":
                 print("You Win!")
             else:
                 print("GAME OVER!")
@@ -161,7 +167,7 @@ def treasure_island():
         print("You fall into a hole. GAME OVER!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # odd_or_even()
     # bmi_calculator()
     # leap_year()
