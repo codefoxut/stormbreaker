@@ -38,15 +38,11 @@ def grade_student():
 
 def update_travel_log():
     travel_log = [
-        {
-            "country": "France",
-            "visits": 12,
-            "cities": ["Paris", "Lille", "Dijon"]
-        },
+        {"country": "France", "visits": 12, "cities": ["Paris", "Lille", "Dijon"]},
         {
             "country": "Germany",
             "visits": 5,
-            "cities": ["Berlin", "Hamburg", "Stuttgart"]
+            "cities": ["Berlin", "Hamburg", "Stuttgart"],
         },
     ]
     # 🚨 Do NOT change the code above
@@ -54,11 +50,7 @@ def update_travel_log():
     # TODO: Write the function that will allow new countries
     # to be added to the travel_log. 👇
     def add_new_country(country, visits, cities):
-        item = {
-             "country": country,
-            "visits": visits,
-            "cities": cities
-        }
+        item = {"country": country, "visits": visits, "cities": cities}
         travel_log.append(item)
 
     # 🚨 Do not change the code below
