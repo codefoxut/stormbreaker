@@ -5,7 +5,7 @@ help:
 
 
 commit:
-	git commit -am"${MESSAGE}"
+	git commit -am"${message}"
 
 push:
 	git push origin main

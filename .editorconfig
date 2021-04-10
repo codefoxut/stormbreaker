@@ -37,6 +37,8 @@ tab_width = 4
 [{*.py,*.pyw,resources}]
 indent_size = 4
 tab_width = 4
+insert_final_newline = true
+
 
 [{*.toml,Cargo.lock,Cargo.toml.orig,Gopkg.lock,Pipfile}]
 indent_size = 4
