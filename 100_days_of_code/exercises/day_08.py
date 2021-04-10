@@ -17,7 +17,7 @@ def days_in_month(year, month):
     if month == 2 and is_leap(year):
         days = 29
     else:
-        days = month_days[month-1]
+        days = month_days[month - 1]
     return days
 
 
@@ -29,5 +29,5 @@ def check_days_in_month():
     print(days)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     check_days_in_month()

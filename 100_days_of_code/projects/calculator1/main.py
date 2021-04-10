@@ -2,7 +2,6 @@ from projects.calculator1.arts import logo
 
 
 class Calculator1:
-
     @staticmethod
     def add(n1, n2):
         return n1 + n2
@@ -19,14 +18,13 @@ class Calculator1:
     def divide(n1, n2):
         return n1 / n2
 
-
     def start(self):
         print(logo)
         operations = {
             "+": self.add,
             "-": self.subtract,
             "*": self.multiply,
-            "/": self.divide
+            "/": self.divide,
         }
 
         new_calculation = True
@@ -47,16 +45,18 @@ class Calculator1:
             second_number = float(input("What's the next number? \t"))
             answer = func(first_number, second_number)
             print(f"{first_number} {func_str} {second_number} = {answer}")
-            cont = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation "
-                         f"or type 'c' to exit: \n")
-            if cont == 'y':
+            cont = input(
+                f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation "
+                f"or type 'c' to exit: \n"
+            )
+            if cont == "y":
                 first_number = answer
                 new_calculation = False
-            elif cont == 'n':
+            elif cont == "n":
                 new_calculation = True
             else:
                 break
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     Calculator1().start()
