@@ -1,6 +1,6 @@
 import math
 
-from alphabets import alphabet
+from projects.caesar_cipher.alphabets import alphabet
 
 
 # Define a function called paint_calc() so that the code below works.
