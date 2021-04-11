@@ -18,7 +18,6 @@ from projects.guess_the_number.arts import logo
 
 
 class GuessNumber:
-
     @staticmethod
     def check_answer(guess, the_number):
         if the_number > guess:
@@ -31,7 +30,7 @@ class GuessNumber:
     @staticmethod
     def set_difficulty():
         difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
-        return 7 if difficulty == 'hard' else 10
+        return 7 if difficulty == "hard" else 10
 
     def start(self):
         print(logo)
@@ -54,5 +53,5 @@ class GuessNumber:
                 print("Guess again.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     GuessNumber().start()

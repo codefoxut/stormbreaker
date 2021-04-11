@@ -5,29 +5,30 @@ from projects.higher_lower.games_data import data
 
 
 class HigherLower:
-
     @staticmethod
     def select_item():
         return random.choice(data)
 
     @staticmethod
     def print_card(card, label):
-        print(f"Compare {label.upper()}: {card['name']}, a {card['description']}, from {card['country']}")
+        print(
+            f"Compare {label.upper()}: {card['name']}, a {card['description']}, from {card['country']}"
+        )
 
     @staticmethod
     def who_has_more_followers(card_a, card_b):
-        if card_a['follower_count'] > card_b['follower_count']:
-            answer = 'A'
-        elif card_a['follower_count'] > card_b['follower_count']:
-            answer = 'B'
+        if card_a["follower_count"] > card_b["follower_count"]:
+            answer = "A"
+        elif card_a["follower_count"] > card_b["follower_count"]:
+            answer = "B"
         else:
-            answer = 'Draw'
+            answer = "Draw"
         return answer.upper()
 
     def display_vs_card(self, card_a, card_b):
-        self.print_card(card_a, 'a')
+        self.print_card(card_a, "a")
         print(vs)
-        self.print_card(card_b, 'b')
+        self.print_card(card_b, "b")
 
     def select_cards(self, card_a):
         while True:
@@ -53,5 +54,5 @@ class HigherLower:
                 break
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HigherLower().start()

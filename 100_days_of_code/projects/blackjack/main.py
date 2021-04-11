@@ -154,7 +154,10 @@ class BlackJack:
             print("You went over. You lose.")
         elif self.computer_score > self.blackjack:
             print("Dealer went over. You win.")
-        elif self.user_score > self.computer_score or self.blackjack_score == self.user_score:
+        elif (
+            self.user_score > self.computer_score
+            or self.blackjack_score == self.user_score
+        ):
             print("You win as you scored more than dealer.")
         else:
             print("You lose as you scored less than the dealer.")
@@ -171,10 +174,13 @@ class BlackJack:
                     if hit == "y":
                         self.add_to_user_cards()
                     elif hit == "n":
-                        if self.blackjack_score < self.computer_score < self.min_dealer_score:
+                        if (
+                            self.blackjack_score
+                            < self.computer_score
+                            < self.min_dealer_score
+                        ):
                             self.add_to_dealer_cards()
                         break
-
 
                 self.score_the_game()
             else:
