@@ -1,8 +1,11 @@
 import sys
 
+from menu import Menu, MenuItem
+from coffee_maker import CoffeeMaker
+from money_machine import MoneyMachine
 
-class CoffeeMachine:
-    earnings = 0
+
+class OldCoffeeMachine:
     MENU = {
         "espresso": {
             "ingredients": {
@@ -28,6 +31,7 @@ class CoffeeMachine:
             "cost": 3.0,
         },
     }
+    earnings = 0
 
     resources = {
         "water": 300,
@@ -121,6 +125,46 @@ class CoffeeMachine:
                 if self.check_txn_success(drink["cost"], inserted_coins):
                     self.make_coffee(drink)
                     print(f"Here is your {choice} ☕, Enjoy!")
+
+
+class CoffeeMachine:
+    def __init__(self):
+        self.menu = Menu()
+        resources = {
+            "water": 300,
+            "milk": 200,
+            "coffee": 100,
+        }
+        self.coffee_maker = CoffeeMaker(**resources)
+        self.money_machine = MoneyMachine(money=0)
+
+    @staticmethod
+    def turn_off():
+        sys.exit(0)
+
+    def print_report(self):
+        self.coffee_maker.report()
+        self.money_machine.report()
+
+    def make_front_panel_choice(self):
+        drinks = self.menu.get_items()
+        while True:
+            choice = input(f"What would you like? ({drinks}): ").lower()
+            if choice in drinks:
+                break
+            elif choice == "off":
+                self.turn_off()
+            elif choice == "report":
+                self.print_report()
+        return choice
+
+    def start(self):
+        while True:
+            choice = self.make_front_panel_choice()
+            drink = self.menu.find_drink(choice)
+            if self.coffee_maker.is_resource_sufficient(drink):
+                if self.money_machine.make_payment(drink.cost):
+                    self.coffee_maker.make_coffee(drink)
 
 
 if __name__ == "__main__":

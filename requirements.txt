@@ -1,2 +1,3 @@
 black
 
+-r 100_days_of_code/req_100doc.txt
