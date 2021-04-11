@@ -6,6 +6,7 @@ class QuizBrain:
         self.question_number = 0
         self.question_list = question_list
         self.score = 0
+        print(f"We have {len(self.question_list)} questions for you.")
 
     def ask_question(self):
         current_question = self.question_list[self.question_number]
