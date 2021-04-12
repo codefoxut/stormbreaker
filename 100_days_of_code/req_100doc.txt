@@ -2,3 +2,5 @@ prettytable
 
 requests
 orjson
+
+colorgram.py
