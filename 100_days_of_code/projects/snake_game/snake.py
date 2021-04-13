@@ -27,7 +27,6 @@ class Snake:
         for i in range(self.initial_size):
             position = (x, 0)
             self.add_segment(position)
-            # t.speed(3 + 3 * i)
             x -= self.block_size
 
     def change_the_direction(self, direction="forward"):
@@ -43,9 +42,6 @@ class Snake:
             self.body[i].goto(self.body[i - 1].pos())
         self.head.forward(self.block_size)
 
-    # def move_forward(self):
-    #     self.move_snake(direction='forward')
-    #
     def move_anticlockwise(self):
         self.change_the_direction(direction="anticlockwise")
 
@@ -70,7 +66,6 @@ class Snake:
 
     def extend(self):
         self.add_segment(self.body[-1].pos())
-        print(len(self.body))
 
     def hit_the_wall(self):
         return (
