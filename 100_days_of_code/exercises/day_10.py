@@ -102,6 +102,7 @@ def draw_spirograph():
 
 def choose_colors():
     import colorgram
+
     colors = colorgram.extract("damien.jpeg", 50)
     return colors
 
@@ -126,7 +127,7 @@ def draw_hirst():
     screen.exitonclick()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # check_turtle()
     # draw_square()
     # draw_dashed_line()
