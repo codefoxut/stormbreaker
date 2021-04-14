@@ -12,6 +12,7 @@ class ScoreCard(Turtle):
         self.color("white")
         self.score = 0
         self.shape("blank")
+        self.hideturtle()
         self.display_score()
 
     def display_score(self):
